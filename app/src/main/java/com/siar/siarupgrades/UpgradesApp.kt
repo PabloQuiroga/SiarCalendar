@@ -8,5 +8,4 @@ import dagger.hilt.android.HiltAndroidApp
  * Created by: Pablo Daniel Quiroga
  *****/
 @HiltAndroidApp
-class UpgradesApp: Application() {
-}
+class UpgradesApp: Application()

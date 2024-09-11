@@ -71,6 +71,9 @@ dependencies {
     implementation(libs.hilt.navigation)
     //navigation compose
     implementation(libs.androidx.navigation.compose)
+    //retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

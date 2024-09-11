@@ -14,6 +14,7 @@ detekt = "1.23.5"
 navigationCompose = "2.8.0"
 ksp = "1.9.22-1.0.17"
 hiltNavigationCompose = "1.2.0"
+retrofitVersion = "2.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,6 +37,10 @@ splashscreen = { group = "androidx.core", name = "core-splashscreen", version.re
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltAndroid"}
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltAndroid"}
 hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+
+# Retrofit
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVersion" }
+converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion" }
 
 # Testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }

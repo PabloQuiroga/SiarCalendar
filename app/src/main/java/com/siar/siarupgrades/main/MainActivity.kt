@@ -14,8 +14,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.siar.siarupgrades.navigation.main.MainNavigation
 import com.siar.siarupgrades.ui.theme.SiarUpgradesTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val viewmodel: MainViewModel by viewModels()
 
@@ -31,31 +34,9 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             SiarUpgradesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                MainNavigation()
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-            .fillMaxSize(),
-        textAlign = TextAlign.Center
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SiarUpgradesTheme {
-        Greeting("Android")
-    }
-}

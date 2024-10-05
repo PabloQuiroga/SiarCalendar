@@ -11,13 +11,12 @@
         android:name=".UpgradesApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SiarUpgrades"
-        tools:targetApi="31">
+        android:theme="@style/Theme.SiarUpgrades" >
 
         <activity
             android:name=".main.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MySplashScreen">
+            android:theme="@style/Theme.SiarUpgrades">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

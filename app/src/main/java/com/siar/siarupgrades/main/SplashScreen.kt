@@ -7,33 +7,30 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.siar.siarupgrades.R
-import com.siar.siarupgrades.navigation.home.HomeNavScreen
-import kotlinx.coroutines.delay
 
 /*****
  * Project: Siar Upgrades
  * Created by: Pablo Daniel Quiroga
  *****/
-@Suppress("UnusedParameter")
 @Composable
 fun SplashScreen(
-    navController: NavHostController,
+    goToHomeScreen: () -> Unit,
     viewModel: MainViewModel
 ) {
-    LaunchedEffect(key1 = true) {
-        delay(3000) //TODO for demo
-        navController.popBackStack()
-        navController.navigate(HomeNavScreen.HomeScreen.route)
-    }
+    val uiState by viewModel.uiState.collectAsState()
 
+    LaunchedEffect(key1 = uiState.isReady) {
+        if (uiState.isReady) goToHomeScreen()
+    }
 
     Column(
         modifier = Modifier
@@ -53,6 +50,8 @@ fun SplashScreen(
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun SplashScreenPreview(){
-    val navController = rememberNavController()
-    SplashScreen(navController, MainViewModel())
+    SplashScreen(
+        goToHomeScreen = {},
+        viewModel = hiltViewModel()
+    )
 }

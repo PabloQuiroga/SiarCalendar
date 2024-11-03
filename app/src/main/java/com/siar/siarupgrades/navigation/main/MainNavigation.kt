@@ -9,7 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.siar.siarupgrades.main.MainViewModel
 import com.siar.siarupgrades.main.SplashScreen
-import com.siar.siarupgrades.navigation.home.HomeNavScreen
+import com.siar.siarupgrades.navigation.home.HomeScreen
 import com.siar.siarupgrades.navigation.home.addHomeScreen
 
 /*****
@@ -21,7 +21,7 @@ fun MainNavigation() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = MainNavScreen.SplashScreen.route
+        startDestination = SplashScreen
     ){
         addSplashScreen(navController)
 
@@ -30,7 +30,7 @@ fun MainNavigation() {
 }
 
 fun NavGraphBuilder.addSplashScreen(navController: NavHostController){
-    composable(MainNavScreen.SplashScreen.route) {
+    composable<SplashScreen> {
         val viewmodel: MainViewModel = hiltViewModel()
 
         SplashScreen(
@@ -42,5 +42,5 @@ fun NavGraphBuilder.addSplashScreen(navController: NavHostController){
 
 fun navigateToHomeScreen(navController: NavHostController) {
     navController.popBackStack()
-    navController.navigate(HomeNavScreen.HomeScreen.route)
+    navController.navigate(HomeScreen)
 }

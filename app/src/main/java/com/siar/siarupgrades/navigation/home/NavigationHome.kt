@@ -9,9 +9,7 @@ import com.siar.siarupgrades.home.HomeScreen
  * Created by: Pablo Daniel Quiroga
  *****/
 fun NavGraphBuilder.addHomeScreen(){
-    composable(
-        HomeNavScreen.HomeScreen.route
-    ){
+    composable<HomeScreen>{
         HomeScreen()
     }
 }

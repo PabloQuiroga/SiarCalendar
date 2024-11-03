@@ -34,13 +34,13 @@ fun NavGraphBuilder.addSplashScreen(navController: NavHostController){
         val viewmodel: MainViewModel = hiltViewModel()
 
         SplashScreen(
-            goToHomeScreen = { navigateToHomeScreen(navController) },
+            goToHomeScreen = { name ->  navigateToHomeScreen(navController, name) },
             viewModel = viewmodel
         )
     }
 }
 
-fun navigateToHomeScreen(navController: NavHostController) {
+fun navigateToHomeScreen(navController: NavHostController, text: String) {
     navController.popBackStack()
-    navController.navigate(HomeScreen)
+    navController.navigate(HomeScreen(name = text))
 }

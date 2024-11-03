@@ -23,13 +23,13 @@ import com.siar.siarupgrades.R
  *****/
 @Composable
 fun SplashScreen(
-    goToHomeScreen: () -> Unit,
+    goToHomeScreen: (String) -> Unit,
     viewModel: MainViewModel
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
     LaunchedEffect(key1 = uiState.isReady) {
-        if (uiState.isReady) goToHomeScreen()
+        if (uiState.isReady) goToHomeScreen("Pablo") //parametro mock
     }
 
     Column(

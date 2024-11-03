@@ -24,13 +24,15 @@ import com.siar.siarupgrades.ui.theme.SiarUpgradesTheme
  * Created by: Pablo Daniel Quiroga
  *****/
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    name: String
+) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = { SetupTopBar() }
     ) { innerPadding ->
         Greeting(
-            name = "Android",
+            name = name,
             modifier = Modifier.padding(innerPadding)
         )
     }
@@ -81,6 +83,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun HomePreview() {
     SiarUpgradesTheme {
-        HomeScreen()
+        HomeScreen("pepe")
     }
 }

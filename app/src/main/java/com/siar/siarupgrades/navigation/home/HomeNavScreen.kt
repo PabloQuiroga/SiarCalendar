@@ -8,4 +8,4 @@ import kotlinx.serialization.Serializable
  *****/
 
 @Serializable
-object HomeScreen
+data class HomeScreen(val name: String)

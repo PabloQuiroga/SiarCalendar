@@ -5,11 +5,13 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.detekt)
     alias(libs.plugins.jetbrains.kotlin.serialization)
+    alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "com.siar.siarupgrades"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.siar.siarupgrades"
